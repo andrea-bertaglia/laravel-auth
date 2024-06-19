@@ -28,7 +28,11 @@
 
         <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-2 shadow">
             <div class="row justify-content-between">
-                <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">NOME</a>
+                <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">
+                    <img src="https://d92mrp7hetgfk.cloudfront.net/images/sites/misc/Boolean/original.png?1623187562"
+                        class="w-25 rounded rounded-circle me-2" alt="Boolfolio">
+                    <span class="fw-bold">Boolfolio</span>
+                </a>
                 <button class="navbar-toggler position-absolute d-md-none collapsed" type="button"
                     data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -61,6 +65,12 @@
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
                                     href="{{ route('admin.dashboard') }}">
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'index' ? 'bg-secondary' : '' }}"
+                                    href="{{ route('admin.projects.index') }}">
+                                    <i class="fa-solid fa-star fa-lg fa-fw"></i> Elenco progetti
                                 </a>
                             </li>
                         </ul>
