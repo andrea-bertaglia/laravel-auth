@@ -15,14 +15,16 @@ class ProjectsTableSeeders extends Seeder
      */
     public function run(Faker $faker): void
     {
-        $newProject = new Project();
-        $newProject->title = $faker->sentence(5);
-        $newProject->description = $faker->text(500);
-        $newProject->link = $faker->url;
-        $newProject->thumb = $faker->imageUrl(360, 360, 'placeholder', true,);
-        $newProject->technologies = $faker->randomElement(['HTML', 'CSS', 'JavaScript', 'VUE.js', 'PHP', 'Laravel']);
-        $newProject->slug = Str::slug($newProject->title);
-        // dd($newProject);
-        $newProject->save();
+        for ($i = 0; $i < 10; $i++) {
+            $newProject = new Project();
+            $newProject->title = $faker->sentence(5);
+            $newProject->description = $faker->text(500);
+            $newProject->link = $faker->url;
+            $newProject->thumb = $faker->imageUrl(360, 360, 'placeholder', true,);
+            $newProject->technologies = $faker->randomElement(['HTML', 'CSS', 'JavaScript', 'VUE.js', 'PHP', 'Laravel']);
+            $newProject->slug = Str::slug($newProject->title);
+            // dd($newProject);
+            $newProject->save();
+        }
     }
 }
