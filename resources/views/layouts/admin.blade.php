@@ -71,7 +71,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'index' ? 'bg-secondary' : '' }}"
-                                    href="{{ route('admin.projects.index') }}">
+                                    href="{{ route('admin.projects.create') }}">
                                     <i class="fa-solid fa-plus"></i>
                                     Aggiungi nuovo
                                 </a>
