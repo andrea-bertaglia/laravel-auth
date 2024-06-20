@@ -37,7 +37,9 @@
                                         class="fa-solid fa-eye"></i></a>
                             </div>
                             <div>
-                                <a class="btn btn-warning text-white" href=""><i class="fa-solid fa-pencil"></i></a>
+                                <a class="btn btn-warning text-white"
+                                    href="{{ route('admin.projects.edit', ['project' => $project->slug]) }}"><i
+                                        class="fa-solid fa-pencil"></i></a>
                             </div>
                             <div>
                                 <a class="btn btn-danger" href=""><i class="fa-solid fa-trash"></i></a>
