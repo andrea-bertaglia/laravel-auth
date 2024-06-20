@@ -12,25 +12,42 @@
                 <div class="col-6">
 
                     <div class="mb-3">
-                        <label for="title" class="form-label">Titolo</label>
-                        <input type="text" class="form-control" id="title" aria-describedby="title" name="title">
+                        <label for="title" class="form-label" id="title"">Titolo</label>
+                        <input type="text"
+                            class="form-control @error('title')
+                            is-invalid
+                        @enderror"
+                            id="title" aria-describedby="title" name="title" value="{{ old('title') }}">
+                        @error('title')
+                            <div id="title-error" class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <div class="mb-3">
                         <label for="description" class="form-label">Descrizione</label>
-                        <textarea type="text" class="form-control" id="description" aria-describedby="description" name="description"
-                            rows="5"></textarea>
+                        <textarea type="text"
+                            class="form-control @error('description')
+                            is-invalid
+                        @enderror"
+                            id="description" aria-describedby="description" name="description" rows="5">{{ old('description') }}</textarea>
+                        @error('description')
+                            <div id="title-error" class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <label for="technologies" class="form-label">Tecnologie</label>
                     <select class="form-select mb-4" aria-label="Technlogies">
                         <option>Seleziona un'opzione</option>
-                        <option value="HTML">HTML</option>
-                        <option value="CSS">CSS</option>
-                        <option value="JavaScript">JavaScript</option>
-                        <option value="VUE.js">VUE.js</option>
-                        <option value="PHP">PHP</option>
-                        <option value="Laravel">Laravel</option>
+                        <option @selected(old('technologies') === 'HTML') value="HTML">HTML</option>
+                        <option @selected(old('technologies') === 'CSS') value="CSS">CSS</option>
+                        <option @selected(old('technologies') === 'JavaScript') value="JavaScript">JavaScript</option>
+                        <option @selected(old('technologies') === 'VUE.js') value="VUE.js">VUE.js</option>
+                        <option @selected(old('technologies') === 'PHP') value="PHP">PHP</option>
+                        <option @selected(old('technologies') === 'Laravel') value="Laravel">Laravel</option>
                     </select>
                 </div>
                 <div class="col-6">

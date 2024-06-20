@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\StoreProjectRequest as AdminStoreProjectRequest;
 use Illuminate\Http\Request;
+use Illiminate\Http\Requests\Admin\StoreProjectRequest;
 use App\Models\Project;
 use Illuminate\Support\Str;
 
@@ -29,7 +31,7 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AdminStoreProjectRequest $request)
     {
         $data = $request->all();
         $newProject = new Project();

@@ -5,7 +5,7 @@
         <div class="d-flex justify-content-between align-items-center pb-3">
             <h1 class="py-4 fw-bold">Elenco progetti</h1>
             <div>
-                <a class="btn btn-success" href="{{ route('admin.projects.create') }}">Aggiungi nuovo progetto</a>
+                <a class="btn btn-success" href="{{ route('admin.projects.create') }}">Aggiungi nuovo</a>
 
             </div>
         </div>
