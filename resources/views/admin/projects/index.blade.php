@@ -25,13 +25,12 @@
                         <th scope="row">{{ $project->id }}</th>
                         <td class="fw-bold">{{ $project->title }}</td>
                         <td>
-                            <img class="w-25 d-block mb-3" src="{{ $project->thumb }}" alt="{{ $project->thumb }}">
                             <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
                                 href="{{ $project->link }}">
                                 <small>{{ $project->link }}</small></a>
                         </td>
                         <td class="fw-bold">{{ $project->technologies }}</td>
-                        <td class="d-flex flex-column align-items-center justify-content-center gap-4 py-4">
+                        <td class="d-flex align-items-center justify-content-center gap-4 py-3">
                             <div>
                                 <a class="btn btn-success"
                                     href="{{ route('admin.projects.show', ['project' => $project->slug]) }}"><i
