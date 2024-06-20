@@ -24,8 +24,8 @@ class StoreProjectRequest extends FormRequest
         return [
             'title' => ['required', 'min:3'],
             'description' => ['required'],
-            'technologies' => ["required"],
-            'slug' => ['required']
+            'technologies' => 'required|in:HTML,CSS,JavaScript,VUE.js,PHP,Laravel',
+            // 'slug' => ['required']
         ];
     }
 
@@ -41,7 +41,8 @@ class StoreProjectRequest extends FormRequest
             'title.min' =>  'Il titolo non può essere minore di tre caratteri',
             'description.required' => 'La descrizione è richiesta',
             'technologies.required' => 'Seleziona la tecnologia',
-            'slug.required' => 'Lo slug è obbligatorio'
+            'technologies.in' => 'Seleziona la tecnologia',
+            // 'slug.required' => 'Lo slug è obbligatorio'
         ];
     }
 }

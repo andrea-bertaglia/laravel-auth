@@ -33,14 +33,18 @@
                         @enderror"
                             id="description" aria-describedby="description" name="description" rows="5">{{ old('description') }}</textarea>
                         @error('description')
-                            <div id="title-error" class="invalid-feedback">
+                            <div id="description-error" class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
                     </div>
 
                     <label for="technologies" class="form-label">Tecnologie</label>
-                    <select class="form-select mb-4" aria-label="Technlogies">
+                    <select
+                        class="form-select @error('technologies')
+                            is-invalid
+                        @enderror"
+                        aria-label="Technlogies" id="technologies" name="technologies">
                         <option>Seleziona un'opzione</option>
                         <option @selected(old('technologies') === 'HTML') value="HTML">HTML</option>
                         <option @selected(old('technologies') === 'CSS') value="CSS">CSS</option>
@@ -49,6 +53,11 @@
                         <option @selected(old('technologies') === 'PHP') value="PHP">PHP</option>
                         <option @selected(old('technologies') === 'Laravel') value="Laravel">Laravel</option>
                     </select>
+                    @error('technologies')
+                        <div id="technologies-error" class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
@@ -60,20 +69,26 @@
 
                         <div class="mt-3">
                             <label for="link" class="form-label">Link</label>
-                            <input type="text" class="form-control" id="link" aria-describedby="link"
-                                name="link">
+                            <input type="text"
+                                class="form-control @error('link')
+                            is-invalid
+                        @enderror"
+                                id="link" aria-describedby="link" name="link" value="{{ old('link') }}">
                         </div>
 
                         <div class="mt-3">
                             <label for="thumb" class="form-label">Anteprima</label>
-                            <input type="text" class="form-control" id="thumb" aria-describedby="thumb"
-                                name="thumb">
+                            <input type="text"
+                                class="form-control @error('thumb')
+                            is-invalid
+                        @enderror"
+                                id="thumb" aria-describedby="thumb" name="thumb" value="{{ old('thumb') }}">
                         </div>
 
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-success mt-5">Salva</button>
+            <button type="submit" class="btn btn-success mt-5 pe-3">Salva</button>
 
         </form>
     </div>

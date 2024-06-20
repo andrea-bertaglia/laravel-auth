@@ -14,6 +14,6 @@ class Project extends Model
         "description",
         "link",
         "thumb",
-        "tecnologies"
+        "technologies"
     ];
 }
