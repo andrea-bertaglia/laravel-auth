@@ -42,7 +42,14 @@
                                         class="fa-solid fa-pencil"></i></a>
                             </div>
                             <div>
-                                <a class="btn btn-danger" href=""><i class="fa-solid fa-trash"></i></a>
+                                <form action="{{ route('admin.projects.destroy', ['project' => $project->slug]) }}"
+                                    method="POST" class="delete-form">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger" type="submit"
+                                        data-project-title="{{ $project->title }}"><i
+                                            class="fa-solid fa-trash"></i></button>
+                                </form>
                             </div>
                         </td>
                     </tr>
