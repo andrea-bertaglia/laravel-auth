@@ -14,7 +14,7 @@
                 <div class="col-6">
 
                     <div class="mb-3">
-                        <label for="title" class="form-label" id="title"">Titolo</label>
+                        <label for="title" class="form-label fw-bold">Titolo</label>
                         <input type="text"
                             class="form-control @error('title')
                             is-invalid
@@ -29,12 +29,12 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="description" class="form-label">Descrizione</label>
+                        <label for="description" class="form-label fw-bold">Descrizione</label>
                         <textarea type="text"
                             class="form-control @error('description')
                             is-invalid
                         @enderror"
-                            id="description" aria-describedby="description" name="description" rows="5">{{ old('description', $project->description) }}"</textarea>
+                            id="description" aria-describedby="description" name="description" rows="5">{{ old('description', $project->description) }}</textarea>
                         @error('description')
                             <div id="description-error" class="invalid-feedback">
                                 {{ $message }}
@@ -42,7 +42,7 @@
                         @enderror
                     </div>
 
-                    <label for="technologies" class="form-label">Tecnologie</label>
+                    <label for="technologies" class="form-label fw-bold">Tecnologie</label>
                     <select
                         class="form-select @error('technologies')
                             is-invalid
@@ -63,33 +63,33 @@
                     @enderror
                 </div>
                 <div class="col-6">
-                    <div class="mb-3">
-                        <fieldset disabled>
-                            <label for="slug" class="form-label">Slug</label>
-                            <input type="text" class="form-control" id="slug" aria-describedby="slug"
-                                name="slug">
-                        </fieldset>
-
-                        <div class="mt-3">
-                            <label for="link" class="form-label">Link</label>
-                            <input type="text"
-                                class="form-control @error('link')
+                    <div class="mt-3">
+                        <label for="link" class="form-label fw-bold">Link</label>
+                        <input type="text"
+                            class="form-control @error('link')
                             is-invalid
                         @enderror"
-                                id="link" aria-describedby="link" name="link"
-                                value="{{ old('link', $project->link) }}">
-                        </div>
+                            id="link" aria-describedby="link" name="link" value="{{ old('link', $project->link) }}">
+                    </div>
 
-                        <div class="mt-3">
-                            <label for="thumb" class="form-label">Anteprima</label>
-                            <input type="text"
-                                class="form-control @error('thumb')
+                    <div class="mt-3">
+                        <label for="thumb" class="form-label fw-bold">Anteprima</label>
+                        <input type="text"
+                            class="form-control @error('thumb')
                             is-invalid
                         @enderror"
-                                id="thumb" aria-describedby="thumb" name="thumb"
-                                value="{{ old('thumb', $project->thumb) }}">
-                        </div>
-
+                            id="thumb" aria-describedby="thumb" name="thumb"
+                            value="{{ old('thumb', $project->thumb) }}">
+                    </div>
+                    <div class="mt-3">
+                        <label for="slug" class="form-label fw-bold">Slug</label>
+                        <input type="text"
+                            class="form-control bg-body-secondary @error('slug')
+                            is-invalid
+                        @enderror"
+                            id="slug" aria-describedby="slug" name="slug" value="{{ old('slug', $project->slug) }}">
+                        <div id="slugHelp" class="form-text">Lo slug non può essere modificato, si aggiorna in base al
+                            titolo inserito.</div>
                     </div>
                 </div>
             </div>

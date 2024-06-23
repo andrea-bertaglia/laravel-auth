@@ -14,7 +14,7 @@
                 <tr>
                     <th scope="col">id</th>
                     <th scope="col">Titolo</th>
-                    <th scope="col">Link</th>
+                    <th scope="col">Slug</th>
                     <th scope="col">Tecnologia</th>
                     <th scope="col">Opzioni</th>
                 </tr>
@@ -24,11 +24,7 @@
                     <tr>
                         <th scope="row">{{ $project->id }}</th>
                         <td class="fw-bold">{{ $project->title }}</td>
-                        <td>
-                            <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
-                                href="{{ $project->link }}">
-                                <small>{{ $project->link }}</small></a>
-                        </td>
+                        <td>{{ $project->slug }}</td>
                         <td class="fw-bold">{{ $project->technologies }}</td>
                         <td class="d-flex align-items-center justify-content-center gap-4 py-3">
                             <div>

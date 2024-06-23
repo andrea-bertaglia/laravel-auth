@@ -25,7 +25,6 @@ class UpdateProjectRequest extends FormRequest
             'title' => ['required', 'min:3'],
             'description' => ['required'],
             'technologies' => 'required|in:HTML,CSS,JavaScript,VUE.js,PHP,Laravel',
-            // 'slug' => ['required']
         ];
     }
 
@@ -42,7 +41,6 @@ class UpdateProjectRequest extends FormRequest
             'description.required' => 'La descrizione è richiesta',
             'technologies.required' => 'Seleziona la tecnologia',
             'technologies.in' => 'Seleziona la tecnologia',
-            // 'slug.required' => 'Lo slug è obbligatorio'
         ];
     }
 }
