@@ -4,6 +4,8 @@ import * as bootstrap from "bootstrap";
 
 import.meta.glob(["../img/**"]);
 
+// SCRIPT GESTIONE SLUG
+
 // Funzione per convertire il titolo in uno slug
 function stringToSlug(str) {
     str = str.replace(/^\s+|\s+$/g, ""); // Trim spaces
@@ -39,3 +41,39 @@ function setupSlugUpdater() {
 
 // Esegui la funzione quando il DOM è completamente caricato
 document.addEventListener("DOMContentLoaded", setupSlugUpdater);
+
+// SCRIPT MODALE
+
+// intercetto tutti i pulsanti di cancellazione (uso DOMContentLoaded per eseguire lo script dopo che il DOM è completamente caricato)
+document.addEventListener("DOMContentLoaded", (event) => {
+    const trashBtns = document.querySelectorAll(".trash-btn");
+
+    if (event) {
+        console.log("il DOM è completamente caricato");
+
+        trashBtns.forEach((catchTrashBtn) => {
+            catchTrashBtn.addEventListener("click", function (event) {
+                const modal = new bootstrap.Modal(
+                    document.getElementById("delete-modal")
+                );
+
+                const projectTitle = catchTrashBtn.dataset.projectTitle;
+                const projectSlug = catchTrashBtn.dataset.projectSlug;
+
+                document.getElementById(
+                    "modal-message"
+                ).innerHTML = `Stai per cancellare il progetto <span class="fw-bold text-danger">${projectTitle}</span>, vuoi proseguire?`;
+
+                const confirmBtn = document.getElementById("confirm-delete");
+                const deleteForm = document.getElementById("delete-form");
+
+                confirmBtn.addEventListener("click", function () {
+                    deleteForm.action = `/admin/projects/${projectSlug}`;
+                    deleteForm.submit();
+                });
+
+                modal.show();
+            });
+        });
+    }
+});
