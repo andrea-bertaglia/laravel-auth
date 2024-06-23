@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const trashBtns = document.querySelectorAll(".trash-btn");
 
     if (event) {
-        console.log("il DOM è completamente caricato");
+        // console.log("il DOM è completamente caricato");
 
         trashBtns.forEach((catchTrashBtn) => {
             catchTrashBtn.addEventListener("click", function (event) {
@@ -75,5 +75,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 modal.show();
             });
         });
+    }
+});
+
+// SCRIPT PREVIEW IMG
+document.getElementById("thumb").addEventListener("change", function (event) {
+    const [file] = event.target.files;
+    if (file) {
+        document.getElementById("preview").src = URL.createObjectURL(file);
     }
 });

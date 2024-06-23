@@ -6,7 +6,7 @@
     <div class="container">
         <h1 class="py-3 fw-bold">Aggiungi un nuovo progetto</h1>
 
-        <form action="{{ route('admin.projects.store') }}" method="POST">
+        <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="row">
@@ -52,8 +52,8 @@
                     </div>
 
                     <div class="mt-3">
-                        <label for="thumb" class="form-label fw-bold">Anteprima</label>
-                        <input type="text" class="form-control @error('thumb') is-invalid @enderror" id="thumb"
+                        <label for="thumb" class="form-label fw-bold">Immagine</label>
+                        <input class="form-control @error('thumb') is-invalid @enderror" type="file" id="thumb"
                             name="thumb" value="{{ old('thumb') }}">
                     </div>
                     <div class="mt-3">
@@ -68,4 +68,5 @@
             <button type="submit" class="btn btn-success mt-5 pe-3">Salva</button>
         </form>
     </div>
+
 @endsection

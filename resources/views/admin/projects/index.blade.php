@@ -56,7 +56,6 @@
             </tbody>
         </table>
     </div>
-
     <!-- Modal -->
     @include('partials.delete-modal')
 @endsection

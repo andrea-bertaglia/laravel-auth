@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illiminate\Http\Requests\Admin\StoreProjectRequest;
 use App\Models\Project;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -36,8 +37,12 @@ class ProjectController extends Controller
     {
         $data = $request->all();
         $newProject = new Project();
-        $newProject->fill($data);
         $newProject->slug = Str::slug($request->title);
+        if ($request->hasFile('thumb')) {
+            $image_path = Storage::put('thumb', $request->thumb);
+            $data['thumb'] = $image_path;
+        }
+        $newProject->fill($data);
         // dd($newProject);
         $newProject->save();
         return redirect()->route('admin.projects.index');

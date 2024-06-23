@@ -6,7 +6,10 @@
 
         <div class="row">
             <div class="col-4">
-                <div><img src="{{ $project->thumb }}" alt="{{ $project->thumb }}"></div>
+                <div>
+                    <img class="w-100" src="{{ asset('storage/' . $project->thumb) }}" alt="">
+
+                </div>
             </div>
             <div class="col-8">
                 <p>{{ $project->description }}</p>
