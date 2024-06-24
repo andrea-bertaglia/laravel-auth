@@ -28,40 +28,41 @@
                             <div id="description-error" class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
-
-                    <label for="technologies" class="form-label fw-bold">Tecnologie</label>
-                    <select class="form-select @error('technologies') is-invalid @enderror" id="technologies"
-                        name="technologies">
-                        <option>Seleziona un'opzione</option>
-                        <option @selected(old('technologies') === 'HTML') value="HTML">HTML</option>
-                        <option @selected(old('technologies') === 'CSS') value="CSS">CSS</option>
-                        <option @selected(old('technologies') === 'JavaScript') value="JavaScript">JavaScript</option>
-                        <option @selected(old('technologies') === 'VUE.js') value="VUE.js">VUE.js</option>
-                        <option @selected(old('technologies') === 'PHP') value="PHP">PHP</option>
-                        <option @selected(old('technologies') === 'Laravel') value="Laravel">Laravel</option>
-                    </select>
-                    @error('technologies')
-                        <div id="technologies-error" class="invalid-feedback">{{ $message }}</div>
-                    @enderror
+                    {{-- <div class="mb-3">
+                        <label for="technologies" class="form-label fw-bold">Tecnologie</label>
+                        <select class="form-select @error('technologies') is-invalid @enderror" id="technologies"
+                            name="technologies">
+                            <option>Seleziona un'opzione</option>
+                            <option @selected(old('technologies') === 'HTML') value="HTML">HTML</option>
+                            <option @selected(old('technologies') === 'CSS') value="CSS">CSS</option>
+                            <option @selected(old('technologies') === 'JavaScript') value="JavaScript">JavaScript</option>
+                            <option @selected(old('technologies') === 'VUE.js') value="VUE.js">VUE.js</option>
+                            <option @selected(old('technologies') === 'PHP') value="PHP">PHP</option>
+                            <option @selected(old('technologies') === 'Laravel') value="Laravel">Laravel</option>
+                        </select>
+                        @error('technologies')
+                            <div id="technologies-error" class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div> --}}
                 </div>
                 <div class="col-6">
-                    <div class="mt-3">
+                    {{-- <div class="mb-3">
                         <label for="link" class="form-label fw-bold">Link</label>
                         <input type="text" class="form-control @error('link') is-invalid @enderror" id="link"
                             name="link" value="{{ old('link') }}">
-                    </div>
+                    </div> --}}
 
-                    <div class="mt-3">
-                        <label for="thumb" class="form-label fw-bold">Immagine</label>
-                        <input class="form-control @error('thumb') is-invalid @enderror" type="file" id="thumb"
-                            name="thumb" value="{{ old('thumb') }}">
-                    </div>
-                    <div class="mt-3">
+                    <div class="mb-3">
                         <label for="slug" class="form-label fw-bold">Slug</label>
                         <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug"
                             name="slug" value="{{ old('slug') }}" disabled>
                         <div id="slugHelp" class="form-text">Lo slug non può essere modificato, si aggiorna in base al
                             titolo inserito.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="thumb" class="form-label fw-bold">Immagine</label>
+                        <input class="form-control @error('thumb') is-invalid @enderror" type="file" id="thumb"
+                            name="thumb" value="{{ old('thumb') }}">
                     </div>
                 </div>
             </div>

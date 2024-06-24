@@ -19,7 +19,7 @@
                     <th scope="col">id</th>
                     <th scope="col">Titolo</th>
                     <th scope="col">Slug</th>
-                    <th scope="col">Tecnologia</th>
+                    {{-- <th scope="col">Tecnologia</th> --}}
                     <th scope="col">Opzioni</th>
                 </tr>
             </thead>
@@ -29,7 +29,7 @@
                         <th scope="row">{{ $project->id }}</th>
                         <td class="fw-bold">{{ $project->title }}</td>
                         <td>{{ $project->slug }}</td>
-                        <td class="fw-bold">{{ $project->technologies }}</td>
+                        {{-- <td class="fw-bold">{{ $project->technologies }}</td> --}}
                         <td class="d-flex align-items-center justify-content-center gap-4 py-3">
                             <div>
                                 <a class="btn btn-success"

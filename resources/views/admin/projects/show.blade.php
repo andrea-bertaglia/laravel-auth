@@ -13,10 +13,10 @@
             </div>
             <div class="col-8">
                 <p>{{ $project->description }}</p>
-                <dd>Link</dd>
-                <dt class="pb-4">{{ $project->link }}</dt>
-                <dd>Tecnologia</dd>
-                <dt class="pb-4">{{ $project->technologies }}</dt>
+                {{-- <dd>Link</dd> --}}
+                {{-- <dt class="pb-4">{{ $project->link }}</dt> --}}
+                {{-- <dd>Tecnologia</dd>
+                <dt class="pb-4">{{ $project->technologies }}</dt> --}}
                 <dd>Slug</dd>
                 <dt>{{ $project->slug }}</dt>
             </div>

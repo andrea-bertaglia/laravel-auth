@@ -27,25 +27,29 @@
                             </div>
                         @enderror
                     </div>
-                    <div class="mt-3">
-                        <label for="slug" class="form-label fw-bold">Slug</label>
-                        <input type="text"
-                            class="form-control bg-body-secondary @error('slug')
+                    <div class="mb-3">
+                        <label for="description" class="form-label fw-bold">Descrizione</label>
+                        <textarea type="text"
+                            class="form-control @error('description')
                             is-invalid
                         @enderror"
-                            id="slug" aria-describedby="slug" name="slug" value="{{ old('slug', $project->slug) }}">
-                        <div id="slugHelp" class="form-text">Lo slug non può essere modificato, si aggiorna in base al
-                            titolo inserito.</div>
+                            id="description" aria-describedby="description" name="description" rows="5">{{ old('description', $project->description) }}</textarea>
+                        @error('description')
+                            <div id="description-error" class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
-                    <div class="mt-3">
+
+                    {{-- <div class="mt-3">
                         <label for="link" class="form-label fw-bold">Link</label>
                         <input type="text"
                             class="form-control @error('link')
                             is-invalid
                         @enderror"
                             id="link" aria-describedby="link" name="link" value="{{ old('link', $project->link) }}">
-                    </div>
-                    <div class="mt-3">
+                    </div> --}}
+                    {{-- <div class="mt-3">
                         <label for="technologies" class="form-label fw-bold">Tecnologie</label>
                         <select
                             class="form-select @error('technologies')
@@ -65,23 +69,20 @@
                                 {{ $message }}
                             </div>
                         @enderror
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
-                        <label for="description" class="form-label fw-bold">Descrizione</label>
-                        <textarea type="text"
-                            class="form-control @error('description')
+                        <label for="slug" class="form-label fw-bold">Slug</label>
+                        <input type="text"
+                            class="form-control bg-body-secondary @error('slug')
                             is-invalid
                         @enderror"
-                            id="description" aria-describedby="description" name="description" rows="5">{{ old('description', $project->description) }}</textarea>
-                        @error('description')
-                            <div id="description-error" class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
+                            id="slug" aria-describedby="slug" name="slug" value="{{ old('slug', $project->slug) }}">
+                        <div id="slugHelp" class="form-text">Lo slug non può essere modificato, si aggiorna in base al
+                            titolo inserito.</div>
                     </div>
-                    <div class="mt-3">
+                    <div class="mb-3">
                         <label for="thumb" class="form-label fw-bold">Immagine</label>
                         <input class="form-control @error('thumb') is-invalid @enderror" type="file" id="thumb"
                             name="thumb" value="{{ old('thumb'), $project->thumb }}">
@@ -90,7 +91,6 @@
                                 id="preview">
                         </div>
                     </div>
-
                 </div>
             </div>
             <button type="submit" class="btn btn-success mt-5 pe-3">Salva</button>
